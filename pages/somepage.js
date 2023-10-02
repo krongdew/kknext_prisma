@@ -8,6 +8,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Layout, Space } from 'antd';
+import Navbars from "@/components/Navbars";
+
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {
   textAlign: 'center',
@@ -52,14 +54,21 @@ export async function getServerSideProps() {
   function SomePage({ data }) {
     // นำข้อมูลที่ดึงมาแสดงบนหน้า
     return (
+
+      <>
+        <Navbars/>
+
         <Space direction="vertical"
+
         style={{
           width: '100%',
         }}
         size={[0, 48]}>
        
         <Layout>
-      <Header style={headerStyle}>Header</Header>
+      <Header style={headerStyle}>
+      
+      </Header>
       <Content style={contentStyle}>
       <Container>
       <Grid container spacing={2}>
@@ -102,8 +111,10 @@ export async function getServerSideProps() {
     </Layout>
   
       </Space>
+      </>
     )
   }
+  
   
   export default SomePage
   
